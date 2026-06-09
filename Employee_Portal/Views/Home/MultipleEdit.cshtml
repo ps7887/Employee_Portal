@@ -1,0 +1,35 @@
+﻿@model List<Employee_Portal.Models.Employee>
+
+<form method="post" asp-action="MultipleEdit">
+
+    <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Model[i].Name
+
+                    <input type="hidden" asp-for="@Model[i].Id" />
+                </td>
+
+                <td>
+                    <input type="number"
+                           asp-for="@Model[i].Salary"
+                           class="form-control" />
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <button style="margin-top:20px;" type="submit">
+        Update Salary
+    </button>
+
+</form>

@@ -1,3 +1,4 @@
+using Employee_Portal;
 using Employee_Portal.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +20,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseMiddleware<CustomMiddleware>();
 app.UseRouting();
 
 app.UseAuthorization();
